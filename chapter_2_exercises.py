@@ -1,3 +1,5 @@
+import math
+
 # 1 and 3
 name = input("Enter your name: ")
 
@@ -80,3 +82,38 @@ print()
 height = int(input("Enter the triangle height: "))
 for i in range(1, height + 1):
     print("*" * i)
+
+# 13
+print()
+height = int(input("Enter the triangle height: "))
+for i in range(height, 0, -1):
+    print("*" * i)
+
+# 14 works properly with odd numbers
+print()
+height = int(input("Enter the diamond height: "))
+for i in range(1, height, 2):
+    print(" " * int((height - i) / 2), end="")
+    print("*" * i, end="")
+    print(" " * int((height - i) / 2))
+for i in range(height, 0, -2):
+    print(" " * int((height - i) / 2), end="")
+    print("*" * i, end="")
+    print(" " * int((height - i) / 2))
+
+# 15 works properly with odd numbers
+size = int(input("Enter the size of the 'A' letter: "))
+
+for i in range(size):
+    if i == (size // 2):
+        print(" " * (math.ceil(size // 2) + 1), end="")
+        print("*" * size)
+    elif (i > 0)&(i!=(size//2)):
+        print(" "*(size-i),end="")
+        print("*",end="")
+        print(" "*(2*i-1),end="")
+        print("*")
+    else:
+        print(" " * size, end="")
+        print("*", end="")
+        print(" " * size)
