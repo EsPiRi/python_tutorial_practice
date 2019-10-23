@@ -77,3 +77,8 @@ last_selected_digits = number % (selected_digits * 10)
 print(last_selected_digits)
 
 # 11
+user_input=float(input("Enter a weight in kilograms: "))
+kg_to_pound=2.2*user_input
+print(kg_to_pound,"not rounded")
+kg_to_pound=round(kg_to_pound/10)*10
+print(kg_to_pound,"rounded")
