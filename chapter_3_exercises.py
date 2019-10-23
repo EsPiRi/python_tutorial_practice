@@ -1,6 +1,8 @@
 # 1
 from random import *
 import random
+import math
+from math import *
 
 for i in range(50):
     print(randint(3, 6), end="-")
@@ -77,8 +79,35 @@ last_selected_digits = number % (selected_digits * 10)
 print(last_selected_digits)
 
 # 11
-user_input=float(input("Enter a weight in kilograms: "))
-kg_to_pound=2.2*user_input
-print(kg_to_pound,"not rounded")
-kg_to_pound=round(kg_to_pound/10)*10
-print(kg_to_pound,"rounded")
+print()
+user_input = float(input("Enter a weight in kilograms: "))
+kg_to_pound = 2.2 * user_input
+print(kg_to_pound, "not rounded")
+kg_to_pound = round(kg_to_pound / 10) * 10
+print(kg_to_pound, "rounded")
+
+# 12
+print()
+number = int(input("Enter a number to get its factorial: "))
+print(math.factorial(number))
+
+# 13
+print()
+angle = float(input("Enter an angle to see its trigonometric values: "))
+print("Sine:", math.sin(angle), "\nCosine:", math.cos(angle), "\nTangent:", math.tan(angle))
+
+# 14
+print()
+angle = float(input("Enter an angle to see its trigonometric values: "))
+angle = math.radians(angle)
+print("Sine:", math.sin(angle), "\nCosine:", math.cos(angle), "\nTangent:", math.tan(angle))
+
+# 15
+print()
+for i in range(0, 360, 15):
+    angle = math.radians(i)
+    sin_angle = int(sin(angle) * 10000) / 10000
+    cos_angle = int(cos(angle) * 10000) / 10000
+    print(i, "---", sin_angle, cos_angle)
+
+# 16
