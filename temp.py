@@ -3,11 +3,26 @@ from random import random
 import random
 from math import *
 
-#2
+#8
+# 17
 print()
-temperature=float(input("Enter a temperature: "))
-selection=int(input("Which unit you want to use?\n1. Celsius\n2. Fahrenheit\n"))
-if selection==1:
-    print("The temperature in Fahrenheit is",(9/5)*temperature+32)
-if selection==2:
-    print("The temperature in Celsius is", (5/9)*(temperature-32))
+year = int(input("Enter the year: "))
+leap_year = False
+count = 0
+leap_years = list()
+if year >= 1600:
+    if year % 400 == 0:
+        leap_year = True
+        count += 1
+    elif year % 100 == 0:
+        leap_year = False
+    elif year % 4 == 0:
+        leap_year = True
+        count += 1
+else:
+    print("year<1600")
+
+if leap_year:
+    print("The year you entered is a leap year.")
+else:
+    print("The year you entered is not a leap year.")
