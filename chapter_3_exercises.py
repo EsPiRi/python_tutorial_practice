@@ -110,4 +110,67 @@ for i in range(0, 360, 15):
     cos_angle = int(cos(angle) * 10000) / 10000
     print(i, "---", sin_angle, cos_angle)
 
-# 16
+# 16 works for most of the years, some years maybe wrong
+print()
+Y = int(input("Enter the year you want to learn its Easter: "))
+C = Y // 100
+m = (15 + C - math.floor(C / 4) - math.floor((8 * C + 13) / 25)) % 30
+n = (4 + C - math.floor(C / 4)) % 7
+a = Y % 4
+b = Y % 7
+c = Y % 19
+d = (19 * c + m) % 30
+e = (2 * a + 4 * b + 6 * d + n) % 7
+if 22 + d + e > 31:
+    print("April", d + e - 9)
+elif (22 + d + e) <= 31:
+    print("March", 22 + d + e)
+
+# 17
+print()
+year = int(input("Enter the year: "))
+leap_year = False
+count = 0
+leap_years = list()
+if year > 1600:
+    print("year>1600")
+    for i in range(1600, year):
+        if i % 400 == 0:
+            leap_year = True
+            count += 1
+            leap_years.append(i)
+        elif i % 100 == 0:
+            leap_year = False
+        elif i % 4 == 0:
+            leap_year = True
+            count += 1
+            leap_years.append(i)
+else:
+    print("year<1600")
+
+print(count, "leap years in this interval are:", leap_years)
+
+# 18
+print()
+price = float(input("Enter the products price: "))
+given_money = float(input("Enter the given money: "))
+difference = (given_money - price) * 100
+if difference >= 0:
+    dollars = difference // 100
+    difference = difference % 100
+    quarters = difference // 25
+    difference = difference % 25
+    dimes = difference // 10
+    difference = difference % 10
+    pennies = difference
+    print("The change is %.0f dollars %.0f quarters %.0f dimes and %0.f pennies." % (dollars, quarters, dimes, pennies))
+
+# 19
+height = int(input("Enter the height of the rectangle: "))
+width = int(input("Enter the width of the rectangle: "))
+k = 0
+for i in range(height):
+    for j in range(width):
+        print(k, end=" ")
+        k = (k + 1) % 10
+    print()
