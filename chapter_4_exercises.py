@@ -78,8 +78,7 @@ if abs(number1 - number2) <= 0.001:
 else:
     print("Not close")
 
-
-#8
+# 8
 print()
 year = int(input("Enter the year: "))
 leap_year = False
@@ -97,3 +96,24 @@ if leap_year:
     print("The year you entered is a leap year.")
 else:
     print("The year you entered is not a leap year.")
+
+# 9
+print()
+number = int(input("Enter number to see its divisors: "))
+divisors = list()
+for i in range(1, number + 1):
+    if number % i == 0:
+        divisors.append(i)
+
+print("The divisors of entered number are:", divisors)
+
+# 10
+print()
+for i in range(1, 11):
+    number1 = random.randint(1, 10)
+    number2 = random.randint(1, 10)
+    answer = int(input("Question %d: %d x %d = " % (i, number1, number2)))
+    if answer == (number1 * number2):
+        print("Right!")
+    else:
+        print("Wrong. The answer is %d" % (number1 * number2))

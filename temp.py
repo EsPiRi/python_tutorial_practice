@@ -3,26 +3,13 @@ from random import random
 import random
 from math import *
 
-#8
-# 17
+# 10
 print()
-year = int(input("Enter the year: "))
-leap_year = False
-count = 0
-leap_years = list()
-if year >= 1600:
-    if year % 400 == 0:
-        leap_year = True
-        count += 1
-    elif year % 100 == 0:
-        leap_year = False
-    elif year % 4 == 0:
-        leap_year = True
-        count += 1
-else:
-    print("year<1600")
-
-if leap_year:
-    print("The year you entered is a leap year.")
-else:
-    print("The year you entered is not a leap year.")
+for i in range(1, 11):
+    number1 = random.randint(1, 10)
+    number2 = random.randint(1, 10)
+    answer = int(input("Question %d: %d x %d = " % (i, number1, number2)))
+    if answer == (number1 * number2):
+        print("Right!")
+    else:
+        print("Wrong. The answer is %d" % (number1 * number2))
