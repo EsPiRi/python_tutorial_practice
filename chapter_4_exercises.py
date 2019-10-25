@@ -117,3 +117,62 @@ for i in range(1, 11):
         print("Right!")
     else:
         print("Wrong. The answer is %d" % (number1 * number2))
+
+# 11
+print()
+hour = int(input("Enter hour: "))
+am_pm = int(input("am (1) or pm (2)? "))
+hours_ahead = int(input("How many hours ahead? "))
+total = hours_ahead + hour
+if total % 12 == 0:
+    total = 12
+if am_pm == 1:
+    if total > 12:
+        print("New hour: ", total%12, "pm")
+    else:
+        print("New hour: ", total, "am")
+elif am_pm == 2:
+    if total > 12:
+        print("New hour: ", total%12, "am")
+    else:
+        print("New hour: ", total, "pm")
+
+# 12
+print()
+# amount_of_candy%7=2
+# amount_of_candy%6=3
+# amount_of_candy%5=2       some information about the question
+amount_of_candy = 0
+for x in range(1, 40):
+    for y in range(1, 33):
+        for z in range(1, 28):
+            if 5 * x + 2 == 6 * y + 3 == 7 * z + 2:
+                print("amount_of_candy at", x, y, z, "value")
+                amount_of_candy = 5 * x + 2
+
+print("Amount of candy is:", amount_of_candy)
+
+# 13
+print()
+print("Welcome to the Rock-Paper-Scissors Game!")
+player_score=0
+cpu_score=0
+for i in range(5):
+    print("Select your move: Rock(1) Paper(2) Scissors(3)")
+    select = int(input())
+    cpu_selection=random.randint(1,3)
+    if select==cpu_selection:
+        print("Draw",cpu_selection)
+    elif select-cpu_selection==-1|select-cpu_selection==2:
+        print("Cpu got the point",cpu_selection)
+        cpu_score+=1
+    else:
+        print("Player got the point",cpu_selection)
+        player_score+=1
+
+if player_score>cpu_score:
+    print("Player wins the game",player_score,cpu_score)
+elif player_score<cpu_score:
+    print("Cpu wins the game",player_score,cpu_score)
+else:
+    print("Tie game",player_score,cpu_score)
