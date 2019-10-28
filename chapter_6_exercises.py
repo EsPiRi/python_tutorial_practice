@@ -55,3 +55,17 @@ if contains_vowel:
     print("This word contains at least one vowel.")
 else:
     print("This word doesn't contain any vowel")
+
+#5
+print()
+string=input("Enter a string: ")
+new_string=string.replace(string[1],"*")
+print(new_string+"!!!")
+
+#6
+print()
+s=input("Enter your string: ")
+s=s.lower()
+s=s.replace(".","")
+s=s.replace(",","")
+print(s)
