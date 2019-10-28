@@ -56,16 +56,95 @@ if contains_vowel:
 else:
     print("This word doesn't contain any vowel")
 
-#5
+# 5
 print()
-string=input("Enter a string: ")
-new_string=string.replace(string[1],"*")
-print(new_string+"!!!")
+string = input("Enter a string: ")
+new_string = string.replace(string[1], "*")
+print(new_string + "!!!")
 
-#6
+# 6
 print()
-s=input("Enter your string: ")
-s=s.lower()
-s=s.replace(".","")
-s=s.replace(",","")
+s = input("Enter your string: ")
+s = s.lower()
+s = s.replace(".", "")
+s = s.replace(",", "")
 print(s)
+
+# 7
+print()
+word = input("Enter your word: ").lower()
+reverse_word = word[len(word)::-1].lower()
+if word == reverse_word:
+    print("Palindrome")
+else:
+    print("Not palindrome")
+
+# 8
+print()
+number_of_input = int(input("Enter how many entries will be entered: "))
+e_mails = list()
+professor_mail = False
+for i in range(number_of_input):
+    new_e_mail = input()
+    e_mails.append(new_e_mail)
+    if new_e_mail.__contains__("@prof.college.edu"):
+        professor_mail = True
+
+if professor_mail:
+    print("Some professor mail has entered.")
+else:
+    print("All mails are student e-mails.")
+
+# 9
+print()
+number = int(input("Enter a number: "))
+for i in range(1, number + 1):
+    print(" " * i + str(i))
+
+# 10
+print()
+string = input("Enter a string: ")
+for i in string:
+    print(i * 2)
+
+# 11
+print()
+word = input("Enter a word contains 'a' letter: ")
+for i in word:
+    if i in ["a", "A"]:
+        print(i)
+    else:
+        print(i, end="")
+
+# 12
+print()
+word = list(input("Enter a word: "))
+for i in range(len(word)):
+    if i % 2 == 1:
+        word[i] = word[i].upper()
+
+new_word = "".join(word)
+print(new_word)
+
+# 13
+print()
+str_1, str_2 = input("Enter a string: "), input("Enter a string with the same length as the previous one: ")
+
+if len(str_1) == len(str_2):
+    for i in range(len(str_1)):
+        print(str_2[i], end="")
+        print(str_1[i], end="")
+else:
+    print("The length of two inputs are not equal!")
+
+# 14
+print()
+name = list(input("Enter your name in lowercase: ").split())
+print(name)
+for i in range(len(name)):
+    temp = list(name[i])
+    temp[0] = temp[0].upper()
+    name[i] = "".join(temp)
+
+name = " ".join(name)
+print(name)
