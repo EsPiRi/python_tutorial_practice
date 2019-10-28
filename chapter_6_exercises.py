@@ -1,4 +1,6 @@
 # 1
+from collections import *
+
 input_ = input("Enter a string: ")
 # a
 print(len(input_))
@@ -148,3 +150,27 @@ for i in range(len(name)):
 
 name = " ".join(name)
 print(name)
+
+#15
+print()
+college_class=input("Enter a college class: ")
+adjective=input("Enter an adjective: ")
+activity=input("Enter an activity: ")
+
+formatted_story=college_class+" class was really "+adjective+" today. We learned how to "+activity+" today in class. I can't wait for tomorrow's class!"
+
+print(formatted_story)
+
+# 16
+name, surname = input("Enter name: ").split()
+
+print("Dear %s %s, I am pleased to offer you our new Platinum Plus Rewards card at a special introductory APR of 47.99%%. %s, an offer like this does not come along every day, so I urge you to call now toll-free at 1-800-314-1592. We cannot offer such a low rate for long, %s, so call right away." %(name,surname,name,name))
+
+
+#17
+print()
+char=deque(list(map(chr,range(97,123))))
+
+for i in range(len(char)):
+    print("".join(char))
+    char.rotate(-1)
