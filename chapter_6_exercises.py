@@ -174,3 +174,68 @@ char=deque(list(map(chr,range(97,123))))
 for i in range(len(char)):
     print("".join(char))
     char.rotate(-1)
+
+#18
+#a
+print()
+string=input("Enter a string: ")
+letter=input("Enter a letter: ")
+if string.__contains__(letter):
+    print("This string contains this letter.")
+else:
+    print("This string doesnt contain this letter.")
+
+#b
+print()
+string=input("Enter a string: ")
+letter=input("Enter a letter: ")
+letter_count=0
+for i in string:
+    if i==letter:
+        letter_count+=1
+
+print(letter_count)
+
+# c
+print()
+string = input("Enter a string: ")
+letter = input("Enter a letter: ")
+index = -1
+for i in range(len(string)):
+    if string[i] == letter:
+        index = i
+        break
+
+if index != -1:
+    print("First occurence in", index, "index")
+else:
+    print("The letter doesnt occur in this string.")
+
+
+# 19
+print()
+number = list(input("Enter a large integer (e.g 1 million)"))
+new_number=""
+if len(number) % 3 == 0:
+    for i in range(len(number)):
+        if (i%3==2)&(i<len(number)-1):
+            new_number+=number[i]+","
+        else:
+            new_number+=number[i]
+
+elif len(number)%3==1:
+    new_number+=number[0]+","
+    for i in range(1,len(number)):
+        if (i%3==0)&(i<len(number)-1):
+            new_number+=number[i]+","
+        else:
+            new_number+=number[i]
+elif len(number)%3==2:
+    new_number+=number[0]+number[1]+","
+    for i in range(2,len(number)):
+        if (i%3==1)&(i<len(number)-1):
+            new_number+=number[i]+","
+        else:
+            new_number+=number[i]
+
+print(new_number)
