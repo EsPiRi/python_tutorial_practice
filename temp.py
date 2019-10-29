@@ -5,31 +5,24 @@ import random
 from math import *
 from collections import *
 
-# 19
-print()
-number = list(input("Enter a large integer (e.g 1 million)"))
-new_number=""
-if len(number) % 3 == 0:
-    for i in range(len(number)):
-        if (i%3==2)&(i<len(number)-1):
-            new_number+=number[i]+","
-        else:
-            new_number+=number[i]
+# 22
+# a
+word = list(input("Enter a word to encrypt: "))
+encrypted_word = ""
+decrypted_word = list(range(len(word)))
+for i in range(0, len(word), 2):
+    encrypted_word += "".join(word[i])
 
-elif len(number)%3==1:
-    new_number+=number[0]+","
-    for i in range(1,len(number)):
-        if (i%3==0)&(i<len(number)-1):
-            new_number+=number[i]+","
-        else:
-            new_number+=number[i]
-elif len(number)%3==2:
-    new_number+=number[0]+number[1]+","
-    for i in range(2,len(number)):
-        if (i%3==1)&(i<len(number)-1):
-            new_number+=number[i]+","
-        else:
-            new_number+=number[i]
+for i in range(1, len(word), 2):
+    encrypted_word += "".join(word[i])
 
-print(new_number)
+for i in encrypted_word:
 
+
+
+
+
+
+
+print(encrypted_word)
+print(decrypted_word)

@@ -1,4 +1,5 @@
 # 1
+import random
 from collections import *
 
 input_ = input("Enter a string: ")
@@ -239,3 +240,13 @@ elif len(number)%3==2:
             new_number+=number[i]
 
 print(new_number)
+
+#21
+print()
+word=list(input("Enter a word to get its anagram: "))
+anagram_word=""
+for i in range(len(word)):
+    anagram_word+="".join(random.choice(word))
+    word.remove(anagram_word[i])
+
+print(anagram_word)
