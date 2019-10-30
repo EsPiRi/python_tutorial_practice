@@ -250,3 +250,51 @@ for i in range(len(word)):
     word.remove(anagram_word[i])
 
 print(anagram_word)
+
+# 22
+# a
+word = list(input("Enter a word to encrypt: "))
+encrypted_word = ""
+decrypted_word = list()
+for i in range(0, len(word), 2):
+    encrypted_word += "".join(word[i])
+
+for i in range(1, len(word), 2):
+    encrypted_word += "".join(word[i])
+
+#b
+mid=int(len(encrypted_word)/2)
+
+if len(encrypted_word)%2!=0:
+    dec_1=encrypted_word[0:mid+1]
+    dec_2=encrypted_word[mid+1:]
+else:
+    dec_1 = encrypted_word[0:mid]
+    dec_2 = encrypted_word[mid:]
+
+for i in range(0, mid):
+    decrypted_word.append(dec_1[i])
+    decrypted_word.append(dec_2[i])
+
+if len(encrypted_word)%2!=0:
+    decrypted_word.append(dec_1[mid])
+
+decrypted_word="".join(decrypted_word)
+print(encrypted_word)
+print(decrypted_word, "decrypted word")
+
+# 23
+# general solution
+word = input("Enter string to encrypt: ")
+ladder_length = int(input("Enter rail length: "))
+encrypted_word = ""
+decrypted_word = list(range(len(word)))
+for j in range(ladder_length):
+    for i in range(j, len(word), ladder_length):
+        encrypted_word += "".join(word[i])
+
+for i in range(len(encrypted_word)):
+    decrypted_word[i] = encrypted_word[(i * (ladder_length + 2)) % len(encrypted_word)]
+
+print(encrypted_word)
+print("".join(decrypted_word))
